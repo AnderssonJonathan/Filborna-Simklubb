@@ -10,7 +10,7 @@ loginButton.addEventListener("click", (e) => {
     const password = loginForm.password.value;
 
     if (username === "Sara" && password === "123") {
-        alert("You have successfully logged in.");
+        //alert("You have successfully logged in.");
         const changeHeadingText = document.getElementById("login-header").innerHTML = "Välkommen";
         loginErrorMsg.style.opacity = 0;
         logoutButton.style.opacity = 1;
