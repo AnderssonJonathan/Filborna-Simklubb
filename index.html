@@ -5,29 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Filborna Simklubb</title>
-
     <link rel="stylesheet" href="/css/styles.css">
+    
 </head>
 <body>
     <div class="content">
         <div class="side">
-            <div id="error"></div>
-            <form action="/" method="GET">
+            <h1 id="login-header">Logga in</h1>
+
+            <div id="login-error-msg-holder">
+                <p id="login-error-msg">Ogiltigt användarnamn <span id="error-msg-second-line">och/eller lösenord</span></p>
+            </div>
+
+
+            <form id="login-form">
                 <div>
-                    <label for="name">Namn</label>
-                    <input id="name" name="name" type="text" >
+                    <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
                 </div><br>
                 <div>
-                    <label for="password">Lösenord</label>
-                    <input id="password" name="password" type="text" >
+                    <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
                 </div>
-                <button class="login" type="login">Logga in</button>
+                <input type="submit" value="Logga in" id="login-form-submit">
             </form>
         </div>
         <div class="main">
         </div>
     </div>
 
-    <script src="/script.js"></script>
+<script src="script.js" ></script>
 </body>
 </html>
