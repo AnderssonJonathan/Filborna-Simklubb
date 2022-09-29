@@ -36,6 +36,18 @@ body {
   margin:0;
 }
 
+#header {
+  display: flex;
+  justify-self: flex-start;
+  margin-right: auto;
+  margin-top: auto;
+}
+
+#headerLogIn {
+  display: flex;
+  margin-bottom: 0;
+}
+
 #login-header-2 {
   display: flex;
   height: 30px;
@@ -46,6 +58,8 @@ body {
 #login-error-msg-holder {
   display: flex;
   flex-direction: column;
+  height: 100px;
+  width: 175px;
   margin-top: 10px;
   margin-bottom: 10px;
   
