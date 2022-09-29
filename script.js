@@ -13,11 +13,12 @@ loginButton.addEventListener("click", (e) => {
     let pass = document.getElementById("pass").value;
 
     if (user === username && pass === password) {
-        const changeHeadingText = document.getElementById("login-header").innerHTML = "Välkommen";
+        const changeHeadingText = document.getElementById("login-header").innerHTML = "Välkommen, <br>du är inloggad!";
         localStorage.setItem("isLoggedIn", true);
         /*localStorage.setItem("password", "123");*/
         const box = document.getElementById('box');
         box.appendChild(el);
+        document.getElementById("login-form-submit").style.display ="none"
         loginErrorMsg.style.opacity = 0;
 
     }   else {
@@ -33,7 +34,11 @@ el.addEventListener("click", (e) => {
 })
 
 window.onload = function isLoggedIn() {
-    if(localStorage.getItem("isLoggedIn")){
-        setUpEvents();
-    }}
-
+    if(localStorage.getItem("isLoggedIn")) {
+        console.log('Hey, you are learning window onload event in JavaScript. Script will be loaded.');
+        const changeHeadingText = document.getElementById("login-header").innerHTML = "Välkommen, <br>du är inloggad!";
+        const box = document.getElementById('box');
+        box.appendChild(el);
+        document.getElementById("login-form-submit").style.display ="none"
+    }
+}
