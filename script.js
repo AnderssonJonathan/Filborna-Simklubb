@@ -4,24 +4,36 @@ const loginErrorMsg = document.getElementById("login-error-msg");
 const el = document.createElement("button");
 el.setAttribute('id', 'my-id');
 el.textContent = 'Logga ut';
+const username = "Sara"
+const password = "qwe123"
 
 loginButton.addEventListener("click", (e) => {
     e.preventDefault();
-    const username = loginForm.username.value;
-    const password = loginForm.password.value;
+    let user = document.getElementById("user").value;
+    let pass = document.getElementById("pass").value;
 
-    if (username === "Sara" && password === "123") {
+    if (user === username && pass === password) {
         const changeHeadingText = document.getElementById("login-header").innerHTML = "Välkommen";
+        localStorage.setItem("isLoggedIn", true);
+        /*localStorage.setItem("password", "123");*/
         const box = document.getElementById('box');
         box.appendChild(el);
         loginErrorMsg.style.opacity = 0;
 
     }   else {
-        loginErrorMsg.style.opacity = 1;  
+        loginErrorMsg.style.opacity = 1;
+        localStorage.setItem("isLoggedIn", false);  
     }
 })
 
 el.addEventListener("click", (e) => {
     e.preventDefault();
+    localStorage.clear();
     location.reload();
 })
+
+window.onload = function isLoggedIn() {
+    if(localStorage.getItem("isLoggedIn")){
+        setUpEvents();
+    }}
+
