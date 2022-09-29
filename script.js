@@ -1,8 +1,9 @@
 const loginForm = document.getElementById("login-form");
 const loginButton = document.getElementById("login-form-submit");
 const loginErrorMsg = document.getElementById("login-error-msg");
-const logoutButton = document.getElementById("logout-form-submit");
-
+const el = document.createElement("button");
+el.setAttribute('id', 'my-id');
+el.textContent = 'Logga ut';
 
 loginButton.addEventListener("click", (e) => {
     e.preventDefault();
@@ -10,20 +11,17 @@ loginButton.addEventListener("click", (e) => {
     const password = loginForm.password.value;
 
     if (username === "Sara" && password === "123") {
-        //alert("You have successfully logged in.");
         const changeHeadingText = document.getElementById("login-header").innerHTML = "Välkommen";
+        const box = document.getElementById('box');
+        box.appendChild(el);
         loginErrorMsg.style.opacity = 0;
-        logoutButton.style.opacity = 1;
 
     }   else {
-        loginErrorMsg.style.opacity = 1;
-        
+        loginErrorMsg.style.opacity = 1;  
     }
 })
 
-logoutButton.addEventListener("click", (e) => {
+el.addEventListener("click", (e) => {
     e.preventDefault();
     location.reload();
 })
-
-//location.reload();

@@ -78,7 +78,7 @@ body {
     outline: none;
 }
 
-#logout-form-submit {
+#my-id {
     width: 100%;
     padding: 7px;
     margin-top: 15px;
@@ -89,8 +89,7 @@ body {
     background-color: #3a3a3a;
     cursor: pointer;
     outline: none;
-    opacity: 0;
-}
+  }
 
 .login-form-field::placeholder {
     color: #3a3a3a;
