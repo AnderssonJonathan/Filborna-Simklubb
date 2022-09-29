@@ -1,10 +1,15 @@
 const loginButton = document.getElementById("login-form-submit");
 const loginErrorMsg = document.getElementById("login-error-msg");
 const btn = document.createElement("button");
+
+/* Abetar med nu
+document.getElementById("login-error-msg").style.display ="none"
+*/
+
 btn.setAttribute('id', 'my-id');
 btn.textContent = 'Logga ut';
 const heading = document.createElement("h4");
-heading.setAttribute('id', '');
+heading.setAttribute('id', 'headerLogIn');
 heading.textContent = 'Du är inloggad!';
 const username = "Sara"
 const password = "qwe123"
@@ -25,10 +30,14 @@ loginButton.addEventListener("click", (e) => {
         header.appendChild(heading);
 
         document.getElementById("login-form-submit").style.display ="none"
+
+        document.getElementById("login-error-msg").style.display ="none"
+
         loginErrorMsg.style.opacity = 0;
     }   
     else {
         loginErrorMsg.style.opacity = 1;
+
         localStorage.setItem("isLoggedIn", false);  
     }
 })
@@ -42,6 +51,7 @@ btn.addEventListener("click", (e) => {
 window.onload = function isLoggedIn() {
     if(localStorage.getItem("isLoggedIn")) {
         console.log('Hey, you are learning window onload event in JavaScript. Script will be loaded.');
+        document.getElementById("login-error-msg").style.display ="none"
         const changeHeadingText = document.getElementById("loginHeader").innerHTML = "Välkommen!";
         const header = document.getElementById('header');
         header.appendChild(heading);
