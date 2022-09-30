@@ -1,16 +1,14 @@
 const loginButton = document.getElementById("login-form-submit");
 const loginErrorMsg = document.getElementById("login-error-msg");
+
 const btn = document.createElement("button");
-
-/* Abetar med nu
-document.getElementById("login-error-msg").style.display ="none"
-*/
-
-btn.setAttribute('id', 'my-id');
+btn.setAttribute('id', 'loggaUt');
 btn.textContent = 'Logga ut';
+
 const heading = document.createElement("h4");
 heading.setAttribute('id', 'headerLogIn');
 heading.textContent = 'Du är inloggad!';
+
 const username = "Sara"
 const password = "qwe123"
 
@@ -21,7 +19,7 @@ loginButton.addEventListener("click", (e) => {
 
     if (user === username && pass === password) {
         let changeHeadingText = document.getElementById("title").innerHTML = "Välkommen!";
-        localStorage.setItem("isLoggedIn", true);
+        localStorage.setItem("userName", "Sara");
 
         const box = document.getElementById('box');
         box.appendChild(btn);
@@ -37,8 +35,6 @@ loginButton.addEventListener("click", (e) => {
     }   
     else {
         loginErrorMsg.style.opacity = 1;
-
-        localStorage.setItem("isLoggedIn", false);  
     }
 })
 
@@ -49,14 +45,17 @@ btn.addEventListener("click", (e) => {
 })
 
 window.onload = function isLoggedIn() {
-    if(localStorage.getItem("isLoggedIn")) {
-        console.log('Hey, you are learning window onload event in JavaScript. Script will be loaded.');
+    if(localStorage.getItem("userName", "Sara")) {
         document.getElementById("login-error-msg").style.display ="none"
+    
         const changeHeadingText = document.getElementById("title").innerHTML = "Välkommen!";
+        
         const loginMsg = document.getElementById('loginMsg');
         loginMsg.appendChild(heading);
+        
         const box = document.getElementById('box');
         box.appendChild(btn);
+
         document.getElementById("login-form-submit").style.display ="none"
     }
 }
