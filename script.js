@@ -20,14 +20,14 @@ loginButton.addEventListener("click", (e) => {
     let pass = document.getElementById("pass").value;
 
     if (user === username && pass === password) {
-        let changeHeadingText = document.getElementById("loginHeader").innerHTML = "Välkommen!";
+        let changeHeadingText = document.getElementById("title").innerHTML = "Välkommen!";
         localStorage.setItem("isLoggedIn", true);
 
         const box = document.getElementById('box');
         box.appendChild(btn);
 
-        const header = document.getElementById('header');
-        header.appendChild(heading);
+        const loginMsg = document.getElementById('loginMsg');
+        loginMsg.appendChild(heading);
 
         document.getElementById("login-form-submit").style.display ="none"
 
@@ -52,9 +52,9 @@ window.onload = function isLoggedIn() {
     if(localStorage.getItem("isLoggedIn")) {
         console.log('Hey, you are learning window onload event in JavaScript. Script will be loaded.');
         document.getElementById("login-error-msg").style.display ="none"
-        const changeHeadingText = document.getElementById("loginHeader").innerHTML = "Välkommen!";
-        const header = document.getElementById('header');
-        header.appendChild(heading);
+        const changeHeadingText = document.getElementById("title").innerHTML = "Välkommen!";
+        const loginMsg = document.getElementById('loginMsg');
+        loginMsg.appendChild(heading);
         const box = document.getElementById('box');
         box.appendChild(btn);
         document.getElementById("login-form-submit").style.display ="none"
