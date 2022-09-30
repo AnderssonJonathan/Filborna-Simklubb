@@ -31,7 +31,6 @@ loginButton.addEventListener("click", (e) => {
 
         document.getElementById("login-error-msg").style.display ="none"
 
-        loginErrorMsg.style.opacity = 0;
     }   
     else {
         loginErrorMsg.style.opacity = 1;
